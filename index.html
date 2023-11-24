@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+       
+        <div class="image-compare"></div>
+        <input type="range" class="range"/>
+
+        <script src="imageCompare.js"></script>
+        <script>
+
+            var compare = new imageCompare('.image-compare',{
+                preImage:'https://akm-img-a-in.tosshub.com/sites/interactive/immersive/gaza/assest/img/chapter-3/After_Izbat-Beit-Hanoun_Gaza.jpg',
+                afterImage:'https://akm-img-a-in.tosshub.com/sites/interactive/immersive/gaza/assest/img/chapter-3/Before_Izbat-Beit-Hanoun_Gaza.jpg',
+                defaultView:24,   // set defalut view in in percantage , defalut value is 50
+                caption:'Satellite image ©2023 Maxar Technologies',
+                captionStyle:{
+                    textAlign:'right',
+                    padding:'6px',
+                    fontSize:'11px',
+                    fontWeight:300,
+                    fontStyle:'italic'
+                },
+                width:500,
+                height:300,
+                isDragElementEnable:true,
+                dragElementStyle:{
+                    lineWidth:4, // default is 5
+                    lineColor:'#000',
+                    cursorType:'col-resize',
+                    circleWidth:20,
+                    circleBackgroundColor:'#fff',
+                    circleBorderColor:'#000',
+                    circleBorderWidth:3,
+                    circleBorderType:'solid'
+                },
+                style:{
+                    margin: '0px auto 10rem auto',
+                    maxWidth: '1024px'
+                }
+
+            });
+
+            compare.init();
+
+            compare.on('drag-position',function(x,y){
+                console.log(x , y)
+            });
+
+
+            document.querySelector('.range').addEventListener('input',function(){
+                compare.setDragMove(this.value)
+            })
+
+        </script>
+    </body>
+</html>
