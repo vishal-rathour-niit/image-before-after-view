@@ -1,7 +1,11 @@
 # Image Before and After View library using JavaScript
 library for view before and after image.
 ![view](satelite-view.PNG)
+
+```<script src="imageCompare.js"></script>```
+
 ```
+<script>
  var obj = new imageCompare('.image-compare',{
         preImage:'assest/img/chapter-3/After_Izbat-Beit-Hanoun_Gaza.jpg',
         afterImage:'assest/img/chapter-3/Before_Izbat-Beit-Hanoun_Gaza.jpg',
@@ -33,6 +37,7 @@ library for view before and after image.
         }
 
     });
+</script>
 ```
 ## initialize
 to initialize, call ```obj.init()``` function.
