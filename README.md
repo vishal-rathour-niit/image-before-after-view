@@ -87,6 +87,6 @@ dragElementStyle:{
     circleBorderType:'solid'
 }
 ```
-![view](satelite-view.png)
+![view](satelite-view.PNG)
 
 
