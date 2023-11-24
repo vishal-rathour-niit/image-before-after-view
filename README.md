@@ -1,6 +1,6 @@
 # Image Before and After View library using JavaScript
 library for to view before and after image.
-
+![view](satelite-view.PNG)
 ```
  var obj = new imageCompare('.image-compare',{
         preImage:'assest/img/chapter-3/After_Izbat-Beit-Hanoun_Gaza.jpg',
@@ -87,6 +87,6 @@ dragElementStyle:{
     circleBorderType:'solid'
 }
 ```
-![view](satelite-view.PNG)
+
 
 
