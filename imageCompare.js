@@ -193,8 +193,11 @@ imageCompare.prototype.setDragMove = function(dragEvent){
         this.rightImage.style.width = Math.abs(dragEvent) + '%';
         this.dragElement.style.left = Math.abs(dragEvent) + '%';
         this.leftImage.style.width = Math.abs((dragEvent - 100)) + '%';
-        let {handler} =  this.getCurrentHandlerType(this.eventsTypes[0]["drag-position"]);
-        handler.apply(this,[Math.abs(dragEvent).toFixed(2),Math.abs((dragEvent - 100)).toFixed(2)]);
+        try{
+            let {handler} =  this.getCurrentHandlerType(this.eventsTypes[0]["drag-position"]);
+            handler && handler.apply(this,[Math.abs(dragEvent).toFixed(2),Math.abs((dragEvent - 100)).toFixed(2)]);
+        }
+        catch(e){}
     }
 }
 
@@ -205,9 +208,12 @@ imageCompare.prototype.on = function(type,handler){
 imageCompare.prototype.moveImage = function(position){
     this.rightImage.style.width = Math.abs(position) + 'px';
     this.leftImage.style.width = Math.abs((position - this.width)) + 'px';
-    let {handler} =  this.getCurrentHandlerType(this.eventsTypes[0]["drag-position"]);
-    let pxToPercantage = (position / this.width) * 100;
-    handler.apply(this,[Math.abs(pxToPercantage).toFixed(2),Math.abs((pxToPercantage - 100)).toFixed(2)]);
+    try{
+        let {handler} =  this.getCurrentHandlerType(this.eventsTypes[0]["drag-position"]);
+        let pxToPercantage = (position / this.width) * 100;
+        handler && handler.apply(this,[Math.abs(pxToPercantage).toFixed(2),Math.abs((pxToPercantage - 100)).toFixed(2)]);
+    }
+    catch(e){}
 }
 
 imageCompare.prototype.onMove = function(e){
@@ -264,3 +270,4 @@ imageCompare.prototype.manageDragElementstyle = function(){
     }
 }
 
+module.exports = imageCompare;
