@@ -5,7 +5,7 @@ Library for Viewing Before and After Images
 ```
 <script src="imageCompare.js"></script>
 <script>
- var obj = new imageCompare('.image-compare',{
+const options = {
         preImage:'assest/img/chapter-3/After_Izbat-Beit-Hanoun_Gaza.jpg',
         afterImage:'assest/img/chapter-3/Before_Izbat-Beit-Hanoun_Gaza.jpg',
         defaultView:24,   // set defalut view in in percantage , defalut value is 50
@@ -35,7 +35,8 @@ Library for Viewing Before and After Images
             maxWidth: '1024px'
         }
 
-    });
+    }
+ var obj = new imageCompare('.image-compare',options);
 </script>
 ```
 ## initialize
