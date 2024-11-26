@@ -1,5 +1,5 @@
-# Image Before and After View library using JavaScript
-library for view before and after image.
+# Before and After Image Comparison Library in JavaScript
+Library for Viewing Before and After Images
 ![view](satelite-view.PNG)
 
 ```
@@ -39,9 +39,9 @@ library for view before and after image.
 </script>
 ```
 ## initialize
-to initialize, call ```obj.init()``` function.
+To initialize, call ```obj.init()``` function.
 
-## get current drag position
+## Get the current drag position
 ```
 obj.on('drag-position',function(x,y){
     console.log(x , y)
