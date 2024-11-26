@@ -2,6 +2,24 @@
 Library for Viewing Before and After Images
 ![view](satelite-view.PNG)
 
+# install by NPM/Yarn
+
+NPM
+```
+npm i image-before-after-view
+```
+
+yarn
+```
+yarn add image-before-after-view
+```
+import
+
+```
+import imageCompare from 'image-before-after-view'
+```
+
+# HTML
 ```
 <script src="imageCompare.js"></script>
 <script>
@@ -92,6 +110,7 @@ dragElementStyle:{
     circleBorderType:'solid'
 }
 ```
+
 
 
 
